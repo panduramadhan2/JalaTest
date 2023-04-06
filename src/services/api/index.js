@@ -5,6 +5,11 @@ import axios from 'axios';
 
 const baseURLJava =
   'https://app.jala.tech/api/shrimp_prices?per_page=15&page=1&with=region,creator&region_id=';
+const EndPointFilterHargaUdang =
+  'https://app.jala.tech/api/regions?has=shrimp_prices&search=';
+('https://app.jala.tech/api/shrimp_prices?per_page=15&page=1&with=region,creator&region_id=');
+const EndPointKabarUdang =
+  'https://app.jala.tech/api/posts?per_page=15&page=1&with=creator';
 
 const hitApiJava = axios.create({
   baseURL: baseURLJava,
@@ -15,16 +20,6 @@ const hitApiJava = axios.create({
   //   },
 });
 
-// hitApi.interceptors.request.use(request => {
-//   console.log('request', request);
-//   return request;
-// });
-
-// hitApi.interceptors.response.use(response => {
-//   console.log('response ', response);
-//   return response;
-// });
-///////////////////////////////////////////////////
 hitApiJava.interceptors.request.use(request => {
   console.log('request', request);
   return request;
